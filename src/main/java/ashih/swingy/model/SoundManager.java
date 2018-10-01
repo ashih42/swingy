@@ -18,7 +18,7 @@ public class SoundManager
 	}
 
 	private MediaPlayer bgmPlayer;
-	private MediaPlayer sfxPlayer;
+	private MediaPlayer hurtSoundPlayer;
 	private final ArrayList<Media> bgmList;
 	private final ArrayList<Media> deathSoundList;
 	private final Media playerDeathSound;
@@ -60,6 +60,9 @@ public class SoundManager
 		this.bgmList.add(this.loadMedia("bgm/Paris2.mp3"));
 		this.bgmList.add(this.loadMedia("bgm/Perturbator.mp3"));
 		this.bgmList.add(this.loadMedia("bgm/TurfMain.mp3"));
+
+		if (this.hurtSound != null)
+			this.hurtSoundPlayer = new MediaPlayer(this.hurtSound);
 	}
 
 	private Media loadMedia(String filename)
@@ -80,15 +83,17 @@ public class SoundManager
 	public void playBGM()
 	{
 		if (this.bgmPlayer != null)
+		{
 			this.bgmPlayer.stop();
+			this.bgmPlayer.dispose();
+		}
 
 		int index = this.RNG.nextInt(this.bgmList.size());
 		Media bgm = this.bgmList.get(index);
-
 		if (bgm != null)
 		{
 			this.bgmPlayer = new MediaPlayer(bgm);
-			this.bgmPlayer.setVolume(0.2);
+			this.bgmPlayer.setVolume(0.4);
 			this.bgmPlayer.setOnEndOfMedia(new Runnable()
 			{
 				public void run()
@@ -100,15 +105,12 @@ public class SoundManager
 		}
 	}
 
-	private void playSFX(Media media)
+	public void playHurtSound()
 	{
-		if (media != null)
+		if (this.hurtSoundPlayer != null)
 		{
-			if (this.sfxPlayer != null)
-				this.sfxPlayer.stop();
-
-			this.sfxPlayer = new MediaPlayer(media);
-			this.sfxPlayer.play();
+			this.hurtSoundPlayer.stop();
+			this.hurtSoundPlayer.play();
 		}
 	}
 
@@ -116,14 +118,16 @@ public class SoundManager
 	{
 		if (media != null)
 		{
-			MediaPlayer mediaPlayer = new MediaPlayer(media);
-			mediaPlayer.play();
+			final MediaPlayer tempMediaPlayer = new MediaPlayer(media);
+			tempMediaPlayer.setOnEndOfMedia(new Runnable()
+			{
+				public void run()
+				{
+					tempMediaPlayer.dispose();
+				}
+			});
+			tempMediaPlayer.play();
 		}
-	}
-
-	public void playHurtSound()
-	{
-		this.playSFX(this.hurtSound);
 	}
 
 	public void playEquipSound()

@@ -1,21 +1,20 @@
 package ashih.swingy.model;
 
 import javax.swing.*;
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Enemy extends Entity implements ICombat
 {
-	private static final ArrayList<Icon> IMAGES = new ArrayList<Icon>();
+	static HashMap<String, Icon> NAME_TO_IMAGE_MAP = new HashMap<String, Icon>();
 	static
 	{
-		Enemy.IMAGES.add(Entity.loadImageFromFile("images/burger.png"));
-		Enemy.IMAGES.add(Entity.loadImageFromFile("images/burger.png"));
-		Enemy.IMAGES.add(Entity.loadImageFromFile("images/french_fries.png"));
-		Enemy.IMAGES.add(Entity.loadImageFromFile("images/pizza.png"));
-		Enemy.IMAGES.add(Entity.loadImageFromFile("images/hotdog.png"));
-		Enemy.IMAGES.add(Entity.loadImageFromFile("images/sandwich.png"));
-		Enemy.IMAGES.add(Entity.loadImageFromFile("images/taco.png"));
-		Enemy.IMAGES.add(Entity.loadImageFromFile("images/burrito.png"));
+		Enemy.NAME_TO_IMAGE_MAP.put("Burger", Entity.loadImageFromFile("images/burger.png"));
+		Enemy.NAME_TO_IMAGE_MAP.put("French Fries", Entity.loadImageFromFile("images/french_fries.png"));
+		Enemy.NAME_TO_IMAGE_MAP.put("Pizza", Entity.loadImageFromFile("images/pizza.png"));
+		Enemy.NAME_TO_IMAGE_MAP.put("Hot Dog", Entity.loadImageFromFile("images/hotdog.png"));
+		Enemy.NAME_TO_IMAGE_MAP.put("Sandwich", Entity.loadImageFromFile("images/sandwich.png"));
+		Enemy.NAME_TO_IMAGE_MAP.put("Taco", Entity.loadImageFromFile("images/taco.png"));
+		Enemy.NAME_TO_IMAGE_MAP.put("Burrito", Entity.loadImageFromFile("images/burrito.png"));
 	}
 
 	private final String enemyName;
@@ -29,37 +28,17 @@ public class Enemy extends Entity implements ICombat
 	private final Equipment equipment;
 	private final StringBuilder stringBuilder;
 
-	public Enemy(String enemyName, int enemyLevel, int posX, int posY)
+	public Enemy(String enemyName, int enemyLevel, int attackPoints, int defensePoints, int healthPoints)
 	{
-		super(posX, posY);
 		this.enemyName = enemyName;
 		this.enemyLevel = enemyLevel;
-		this.initializeStats();
+		this.attackPoints = attackPoints;
+		this.defensePoints = defensePoints;
+		this.currentHealth = healthPoints;
+		this.maxHealth = healthPoints;
+		this.image = Enemy.NAME_TO_IMAGE_MAP.get(this.enemyName);
 		this.equipment = EquipmentFactory.getInstance().createRandomEquipment(this.enemyLevel);
-		int imageIndex = Entity.RNG.nextInt(Enemy.IMAGES.size());
-		this.image = Enemy.IMAGES.get(imageIndex);
 		this.stringBuilder = new StringBuilder();
-	}
-
-	private void initializeStats()
-	{
-		int statPoints = this.enemyLevel * 5;
-		this.attackPoints = 0;
-		this.defensePoints = 0;
-		this.maxHealth = 0;
-
-		while (statPoints > 0)
-		{
-			double probability = Math.random();
-			if (probability < 0.3)
-				this.attackPoints++;
-			else if (probability < 0.6)
-				this.defensePoints++;
-			else
-				this.maxHealth += 2;
-			statPoints--;
-		}
-		this.currentHealth = this.maxHealth;
 	}
 
 	public String getFullStats()

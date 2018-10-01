@@ -35,8 +35,8 @@ public class Hero extends Entity implements ICombat
 	private Equipment weapon;
 	private Equipment armor;
 	private Equipment helmet;
-	private final StringBuilder stringBuilder;
 	private Icon image;
+	private final StringBuilder stringBuilder;
 
 	/* Constructor for creating a new level 1 hero */
 	public Hero(String heroName, String heroClass, int attackPoints, int defensePoints, int healthPoints)
@@ -114,7 +114,6 @@ public class Hero extends Entity implements ICombat
 	public Equipment getWeapon() { return (this.weapon); }
 	public Equipment getArmor() { return (this.armor); }
 	public Equipment getHelmet() { return (this.helmet); }
-
 
 	public void setMapLevel(int mapLevel) { this.mapLevel = mapLevel; }
 

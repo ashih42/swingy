@@ -102,32 +102,32 @@ public class GameController implements KeyListener
 	private void moveViewportUp()
 	{
 		this.consoleMapWindow.setViewPortUpperLeftPos(this.consoleMapWindow.getViewportUpperLeftPosX(),
-				this.consoleMapWindow.getViewportUpperLeftPosY() + 1);
-		this.graphicsMapWindow.setViewPortUpperLeftPos(this.graphicsMapWindow.getViewportUpperLeftPosX(),
-				this.graphicsMapWindow.getViewportUpperLeftPosY() + 1);
-	}
-
-	private void moveViewportDown()
-	{
-		this.consoleMapWindow.setViewPortUpperLeftPos(this.consoleMapWindow.getViewportUpperLeftPosX(),
 				this.consoleMapWindow.getViewportUpperLeftPosY() - 1);
 		this.graphicsMapWindow.setViewPortUpperLeftPos(this.graphicsMapWindow.getViewportUpperLeftPosX(),
 				this.graphicsMapWindow.getViewportUpperLeftPosY() - 1);
 	}
 
+	private void moveViewportDown()
+	{
+		this.consoleMapWindow.setViewPortUpperLeftPos(this.consoleMapWindow.getViewportUpperLeftPosX(),
+				this.consoleMapWindow.getViewportUpperLeftPosY() + 1);
+		this.graphicsMapWindow.setViewPortUpperLeftPos(this.graphicsMapWindow.getViewportUpperLeftPosX(),
+				this.graphicsMapWindow.getViewportUpperLeftPosY() + 1);
+	}
+
 	private void moveViewportLeft()
 	{
-		this.consoleMapWindow.setViewPortUpperLeftPos(this.consoleMapWindow.getViewportUpperLeftPosX() + 1,
+		this.consoleMapWindow.setViewPortUpperLeftPos(this.consoleMapWindow.getViewportUpperLeftPosX() - 1,
 				this.consoleMapWindow.getViewportUpperLeftPosY());
-		this.graphicsMapWindow.setViewPortUpperLeftPos(this.graphicsMapWindow.getViewportUpperLeftPosX() + 1,
+		this.graphicsMapWindow.setViewPortUpperLeftPos(this.graphicsMapWindow.getViewportUpperLeftPosX() - 1,
 				this.graphicsMapWindow.getViewportUpperLeftPosY());
 	}
 
 	private void moveViewportRight()
 	{
-		this.consoleMapWindow.setViewPortUpperLeftPos(this.consoleMapWindow.getViewportUpperLeftPosX() - 1,
+		this.consoleMapWindow.setViewPortUpperLeftPos(this.consoleMapWindow.getViewportUpperLeftPosX() + 1,
 				this.consoleMapWindow.getViewportUpperLeftPosY());
-		this.graphicsMapWindow.setViewPortUpperLeftPos(this.graphicsMapWindow.getViewportUpperLeftPosX() - 1,
+		this.graphicsMapWindow.setViewPortUpperLeftPos(this.graphicsMapWindow.getViewportUpperLeftPosX() + 1,
 				this.graphicsMapWindow.getViewportUpperLeftPosY());
 	}
 

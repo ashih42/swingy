@@ -65,8 +65,8 @@ public class Map
 		{
 			int posX = this.RNG.nextInt(this.mapSize);
 			int posY = this.RNG.nextInt(this.mapSize);
-			Enemy enemy = new Enemy("Bad Guy", this.mapLevel, posX, posY);
-			this.entities[posY][posX] = enemy;
+			Enemy enemy = EnemyFactory.getInstance().createRandomEnemy(this.mapLevel);
+			this.updatePosition(posX, posY, enemy);
 			this.enemies.add(enemy);
 		}
 	}
