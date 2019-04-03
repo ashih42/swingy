@@ -7,12 +7,21 @@ You have `Maven` and `Java JDK` installed.  `Docker` and `MySQL` are optional.
 
 ## (Optional) Set up MySQL database in Docker
 
-These scripts assume you have started a docker-machine named `Char`.
+These scripts assume you have created a docker-machine named `Char`.
 
 ```
-source setup/env_init.sh;
-./setup/docker_init.sh;
-./setup/mysql_init.sh;
+# If necessary, create a new docker-machine.
+docker-machine create --driver virtualbox Char
+
+# Start docker-machine, download and initialize mysql container.
+./setup/docker_init.sh
+
+# WAIT a minute for mysql to finish initialization,
+# and then run this script to populate the database.
+./setup/mysql_init.sh
+
+# Export Char's IP for the Java program.
+source setup/env_init.sh
 ```
 
 The game will still run if it cannot find the MySQL server, but you will not be able to save your progress.
