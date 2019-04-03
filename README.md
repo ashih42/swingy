@@ -19,9 +19,6 @@ docker-machine create --driver virtualbox Char
 # WAIT a minute for mysql to finish initialization,
 # and then run this script to populate the database.
 ./setup/mysql_init.sh
-
-# Export Char's IP for the Java program.
-source setup/env_init.sh
 ```
 
 The game will still run if it cannot find the MySQL server, but you will not be able to save your progress.
