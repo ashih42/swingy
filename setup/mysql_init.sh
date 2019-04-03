@@ -7,4 +7,4 @@
 # It already has a database called swingDB
 
 eval "$(docker-machine env Char)"
-mysql -h $(docker-machine ip Char) -u root -pdoge swingyDB < sql_init.sql
+mysql -h $(docker-machine ip Char) -u root -pdoge swingyDB < setup/sql_init.sql
