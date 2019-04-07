@@ -3,7 +3,7 @@ A top-down role-playing game in Java using Swing library. (42 Silicon Valley)
 
 ## Prerequisites
 
-You have `Maven` and `Java JDK` installed.  `Docker` and `MySQL` are optional.
+You have `Maven` and `Java 9 JDK` installed.  `Docker` and `MySQL` are optional.
 
 ## (Optional) Set up MySQL database in Docker
 
@@ -26,7 +26,7 @@ The game will still run if it cannot find the MySQL server, but you will not be 
 ## Compiling
 
 ```
-./mvn clean package
+mvn clean package
 ```
 
 ## Running
