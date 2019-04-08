@@ -1,7 +1,9 @@
 # swingy
 A top-down role-playing game in Java using [Swing](https://en.wikipedia.org/wiki/Swing_(Java)). (42 Silicon Valley)
 
-![screenshot](https://github.com/ashih42/swingy/blob/master/Screenshots/screenshot1.jpg)
+<p float="left">
+  <img src="https://github.com/ashih42/swingy/blob/master/Screenshots/screenshot1.jpg" width="540" />
+</p>
 
 ## Prerequisites
 
