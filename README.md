@@ -1,6 +1,8 @@
 # swingy
 A top-down role-playing game in Java using [Swing](https://en.wikipedia.org/wiki/Swing_(Java)). (42 Silicon Valley)
 
+![screenshot](https://github.com/ashih42/swingy/blob/master/Screenshots/screenshot1.jpg)
+
 ## Prerequisites
 
 You have `Maven` and `Java 9 JDK` installed.  `Docker` and `MySQL` are optional.
