@@ -1,5 +1,5 @@
 # swingy
-A top-down role-playing game in Java using Swing library. (42 Silicon Valley)
+A top-down role-playing game in Java using [Swing](https://en.wikipedia.org/wiki/Swing_(Java)). (42 Silicon Valley)
 
 ## Prerequisites
 
