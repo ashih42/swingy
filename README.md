@@ -9,7 +9,7 @@ An old-school [role-playing game](https://en.wikipedia.org/wiki/Role-playing_vid
 
 You have `Maven` and `Java 9 JDK` installed.  `Docker` and `MySQL` are optional.
 
-## (Optional) Set up MySQL database in Docker
+## (Optional) Set up MySQL Database in Docker
 
 These scripts assume you have created a docker-machine named `Char`.
 
