@@ -1,5 +1,5 @@
 # swingy
-An old-school [role-playing game](https://en.wikipedia.org/wiki/Role-playing_video_game) in Java using [Swing](https://en.wikipedia.org/wiki/Swing_(Java)). (42 Silicon Valley)
+A 2D [role-playing game](https://en.wikipedia.org/wiki/Role-playing_video_game) in Java using [Swing](https://en.wikipedia.org/wiki/Swing_(Java)). (42 Silicon Valley)
 
 <p float="left">
   <img src="https://github.com/ashih42/swingy/blob/master/Screenshots/screenshot1.jpg" width="540" />
