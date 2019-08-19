@@ -5,6 +5,15 @@ A 2D [role-playing game](https://en.wikipedia.org/wiki/Role-playing_video_game) 
   <img src="https://github.com/ashih42/swingy/blob/master/Screenshots/screenshot1.jpg" width="540" />
 </p>
 
+## Learning Objectives
+* Architecture design following Model–View–Controller model
+* Dependency management with Maven
+* Input validation with Hibernate
+* GUI implementation with Swing
+* Documentation with UML class diagram
+* Data persistence with MySQL
+* Docker container for MySQL server (because no permission at school computer)
+
 ## Prerequisites
 
 You have `Maven` and `Java 9 JDK` installed.  `Docker` and `MySQL` are optional.
